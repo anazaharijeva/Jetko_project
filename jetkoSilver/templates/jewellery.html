@@ -48,7 +48,7 @@
                 <input class="me-2" type="checkbox" name="jewelry_type" value="Rings"
                        {% if 'Rings' in selected_jewelry_type %}checked{% endif %}>Rings<br>
                 <input class="me-2" type="checkbox" name="jewelry_type" value="Nacklaces"
-                       {% if 'Nacklaces' in selected_jjewelry_type %}checked{% endif %}>Necklaces<br>
+                       {% if 'Nacklaces' in selected_jewelry_type %}checked{% endif %}>Necklaces<br>
                 <input class="me-2" type="checkbox" name="jewelry_type" value="Watches"
                        {% if 'Watches' in selected_jewelry_type %}checked{% endif %}>Watches<br>
                 <input class="me-2" type="checkbox" name="jewelry_type" value="Else"
@@ -76,13 +76,13 @@
                 <input class="me-2" type="checkbox" name="color" value="Pearly"
                        {% if 'Pearly' in selected_color %}checked{% endif %}>Pearly<br>
                 <button type="submit" class="btn btn-success mt-4 mb-2">Filter</button>
-                <a href="{% url 'jewelries' %}" class="d-flex">Clear filters</a>
+                <a href="{% url 'jewellery' %}" class="d-flex">Clear filters</a>
             </form>
         </div>
 
         <div class="col">
             <div class="row">
-                {% for jewellery in jewelries %}
+                {% for jewellery in jeweleries %}
                     <div class="mt-5 col-6 col-lg-3 text-center">
                         <a href="{% url 'jewellery_details' jewellery.id %}">
                             <img src="{{ MEDIA_URL }}{{ images.url }}" class="" style="height: 300px; width: 150px; ">#}
