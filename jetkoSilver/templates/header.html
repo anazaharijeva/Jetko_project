@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jetko Silver</title>
+    <link rel="icon" type="images/x-icon" href="https://freepngimg.com/download/phone_case/33082-2-phone-case-photos.png">
+</head>
+<body>
+    <div class="row mt-5">
+         <a href="{% url 'jewellery' %}" class="col-3 fw-bold text-decoration-none" style="color: #444F5A">
+             <h1 class="mb-0">Jetko Silver</h1>
+         </a>
+        <div class="col-9 text-end">
+            {% if user.is_authenticated and user.is_superuser %}
+                <a href="{% url 'add_item' %}" class="btn btn-primary me-3">Add New Item</a>
+            {% endif %}
+            {% if user.is_authenticated %}
+                <a href="{% url 'cart_items' %}" class="text-decoration-none">
+                    <h4 style="color: #444F5A" class="d-inline me-3">MyCart</h4>
+                </a>
+                <a href="{% url 'logout' %}" class="text-decoration-none">
+                    <h4 style="color: #444F5A" class="d-inline">LogOut</h4>
+                </a>
+            {% else %}
+                <a href="{% url 'login' %}" class="text-decoration-none">
+                        <h4 style="color: #444F5A" class="d-inline">LogIn</h4>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
